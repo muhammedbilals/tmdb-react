@@ -3,6 +3,9 @@ import { transformMovieData } from '../models/movieModel';
 
 const getMovies = async () => {
   try {
+    
+    console.log('API Key:', process.env.REACT_APP_TMDB_API_KEY);
+
     const response = await tmdbApi.get('/movie/popular');
     return response.data.results.map(transformMovieData);
   } catch (error) {
@@ -25,3 +28,4 @@ export default {
   getMovies,
   getMovieById,
 };
+   

@@ -13,10 +13,12 @@ const MovieList = () => {
     loadMovies();
   }, []);
 
+  
+
   return (
     <div className="movie-list">
       <h1>Popular Movies</h1>
-      <ul className="movie-grid">
+      <div className="movie-grid">
         {movies.map((movie) => (
           <li key={movie.id} className="movie-item">
             <img 
@@ -27,7 +29,7 @@ const MovieList = () => {
             <h2 className="movie-title">{movie.title}</h2>
           </li>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
