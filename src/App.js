@@ -1,8 +1,9 @@
 import React from "react";
+import HomePage from "../src/views/homePage.jsx"
 
 const App = ()=> {
     return (
-        <h1>Hello world</h1>
+        <HomePage />
     )
 }
 
