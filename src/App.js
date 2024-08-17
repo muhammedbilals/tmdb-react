@@ -1,9 +1,9 @@
 import React from "react";
-import HomePage from "../src/views/homePage.jsx"
+import HomePage from "../src/views/homePage.js"
 
 const App = ()=> {
     return (
-        <HomePage />
+        <HomePage/>
     )
 }
 
