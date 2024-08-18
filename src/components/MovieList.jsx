@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchMovies } from '../controller/movieController';
 import './MovieList.css';
+import '../index.css';
+
+
 
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
@@ -13,24 +16,22 @@ const MovieList = () => {
     loadMovies();
   }, []);
 
-  
-
-  return (
-    <div className="movie-list">
-      <h1>Popular Movies</h1>
-      <div className="movie-grid">
-        {movies.map((movie) => (
-          <li key={movie.id} className="movie-item">
-            <img 
-              src={`https://image.tmdb.org/t/p/w200${movie.posterPath}`} 
-              alt={movie.title} 
-              className="movie-poster"
-            />
-            <h2 className="movie-title">{movie.title}</h2>
-          </li>
-        ))}
-      </div>
+  return ( 
+    <div className="">
+    <h1>Popular Movies</h1>
+    <div className="aspect-ratio: 16 / 9">
+      {movies.map((movie) => (
+        <div key={movie.id} className="movie-item">
+          <img 
+            src={`https://image.tmdb.org/t/p/w200${movie.posterPath}`} 
+            alt={movie.title} 
+            className="aspect-ratio: 16 / 9"
+          />
+          <h2 className="ont-serif">{movie.title}</h2>
+        </div>
+      ))}
     </div>
+  </div>
   );
 };
 
