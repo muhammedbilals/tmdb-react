@@ -1,5 +1,6 @@
 import tmdbApi from '../api/api';
 import { transformMovieData } from '../models/movieModel';
+import { transformTvData } from '../models/tvseriesModel';
 
 const getMovies = async () => {
   try {
@@ -14,6 +15,16 @@ const getMovies = async () => {
   }
 };
 
+const getTvSeries = async () => {
+  try {
+    const response = await tmdbApi.get('/tv/popular');
+    return response.data.results.map(transformTvData);
+  } catch (error) {
+    console.log(error)
+    return []
+  }
+}
+
 const getMovieById = async (id) => {
   try {
     const response = await tmdbApi.get(`/movie/${id}`);
@@ -27,5 +38,6 @@ const getMovieById = async (id) => {
 export default {
   getMovies,
   getMovieById,
+  getTvSeries,
 };
    
