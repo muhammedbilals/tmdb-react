@@ -13,7 +13,7 @@ const App = () => {
         <Route path="/" element={<MovieList />} />
         <Route path="/movies" element={
           <>
-          <Slider/>
+          {/* <Slider/> */}
           <MovieList />
           </>
           }/>

@@ -14,10 +14,13 @@ const Slider = () => {
     }, []);
   
     return (
-      <>
-      <img className='' src='https://image.tmdb.org/t/p/original/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg' ></img>
-      </>
-    );
+            movies.map((movie)=>(
+                <>
+                <img className='h-full w-full flex-auto overflow-x-auto' src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`}></img>
+                </>
+            )
+        )
+    )
   };
 
 

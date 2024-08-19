@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './TVSeriesList.css';
 import { fetchTvSeries } from '../controller/movieController';
+import MovieCard from './movieCard';
 
 const TVSeriesList = () => {
   const [Tvseries, setTvseries] = useState([]);
@@ -16,18 +16,11 @@ const TVSeriesList = () => {
   
 
   return (
-    <div className="movie-list">
-      <h1>Popular Tvseries</h1>
-      <div className="movie-grid">
+    <div className=" p-4 origin-center ">
+      <h1 className="text-3xl font-bold mb-4">Popular Movies</h1>
+      <div className="overflow-x-auto flex space-x-4 pb-4 scrollbar-hide ">
         {Tvseries.map((movie) => (
-          <li key={movie.id} className="movie-item">
-            <img 
-              src={`https://image.tmdb.org/t/p/w200${movie.posterPath}`} 
-              alt={movie.title} 
-              className="movie-poster"
-            />
-            <h2 className="movie-title">{movie.title}</h2>
-          </li>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </div>
     </div>
