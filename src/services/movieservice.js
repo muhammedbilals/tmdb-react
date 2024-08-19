@@ -1,10 +1,10 @@
 import tmdbApi from '../api/api';
 import { transformMovieData } from '../models/movieModel';
-import { transformTvData } from '../models/tvseriesModel';
+
 
 const getPopularMovies = async () => {
 
-  try {  
+  try {
     console.log('API Key:', process.env.REACT_APP_TMDB_API_KEY);
 
     const response = await tmdbApi.get('/movie/popular');
@@ -14,6 +14,7 @@ const getPopularMovies = async () => {
     return [];
   }
 };
+
 const getNowPlayingMovies = async () => {
 
   try {  
@@ -52,15 +53,7 @@ const getUpcomingMovies = async () => {
   }
 };
 
-const getTvSeries = async () => {
-  try {
-    const response = await tmdbApi.get('/tv/popular');
-    return response.data.results.map(transformTvData);
-  } catch (error) {
-    console.log(error)
-    return []
-  }
-}
+
 
 const getMovieById = async (id) => {
   try {
@@ -79,6 +72,6 @@ export default {
   getTopRatedMovies,
   getUpcomingMovies,
   getMovieById,
-  getTvSeries,
+
 };
    

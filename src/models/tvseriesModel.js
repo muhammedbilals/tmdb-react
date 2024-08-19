@@ -1,26 +1,54 @@
-export const TVSeries = {
-    id: null,
-    name: '',
-    overview: '',
-    posterPath: '',
-    firstAirDate: '',
-    genreIds: [],
-    originalLanguage: '',
-    popularity: 0,
-    voteAverage: 0,
-    voteCount: 0,
-  };
-  
-  export const transformTvData = (data) => ({
+// Define the TvModel class
+export class TvModel {
+  constructor({
+    adult,
+    backdropPath,
+    genreIds,
+    id,
+    originCountry,
+    originalLanguage,
+    originalName,
+    overview,
+    popularity,
+    posterPath,
+    firstAirDate,
+    name,
+    voteAverage,
+    voteCount,
+  }) {
+    this.adult = adult;
+    this.backdropPath = backdropPath;
+    this.genreIds = genreIds;
+    this.id = id;
+    this.originCountry = originCountry;
+    this.originalLanguage = originalLanguage;
+    this.originalName = originalName;
+    this.overview = overview;
+    this.popularity = popularity;
+    this.posterPath = posterPath;
+    this.firstAirDate = firstAirDate;
+    this.name = name;
+    this.voteAverage = voteAverage;
+    this.voteCount = voteCount;
+  }
+}
+
+// Transform function to convert API data to TvModel format
+export const transformTvData = (data) => {
+  return new TvModel({
+    adult: data.adult,
+    backdropPath: data.backdrop_path,
+    genreIds: data.genre_ids,
     id: data.id,
-    name: data.name,
+    originCountry: data.origin_country,
+    originalLanguage: data.original_language,
+    originalName: data.original_name,
     overview: data.overview,
+    popularity: data.popularity,
     posterPath: data.poster_path,
     firstAirDate: data.first_air_date,
-    genreIds: data.genre_ids,
-    originalLanguage: data.original_language,
-    popularity: data.popularity,
+    name: data.name,
     voteAverage: data.vote_average,
     voteCount: data.vote_count,
   });
-  
+};
