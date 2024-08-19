@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 body {
-    @apply font-sans;  /* Apply the sans font family defined in Tailwind config */
+    @apply font-sans;
+    background-color: black;
+    color: white; 
+
   }
   

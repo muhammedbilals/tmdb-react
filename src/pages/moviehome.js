@@ -1,10 +1,12 @@
 import React from 'react';
 import MovieList from '../components/MovieList';
 
-const HomePage = () => (
+const MovieHomePage = () => (
   <div>
     <MovieList />
+    <MovieList />
+
   </div>
 );
 
-export default HomePage;
+export default MovieHomePage;
