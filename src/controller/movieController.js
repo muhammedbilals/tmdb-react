@@ -1,8 +1,19 @@
 import movieService from "../services/movieservice";
 
 
-export const fetchMovies = async () => {
-  return await movieService.getMovies();
+export const fetchPopularMovies = async () => {
+  return await movieService.getPopularMovies();
+};
+
+export const fetctNowPlayingMovies = async () => {
+  return await movieService.getPopularMovies();
+};
+
+export const fetctTopRatedMovies = async () => {
+  return await movieService.getPopularMovies();
+};
+export const fetctUpcomingMovies = async () => {
+  return await movieService.getPopularMovies();
 };
 
 export const fetchMovieDetails = async (id) => {

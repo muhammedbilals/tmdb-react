@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchMovies } from '../controller/movieController';
+import { fetchPopularMovies } from '../controller/movieController';
 import second from '../index.css'
 
 const Slider = () => {
@@ -7,7 +7,7 @@ const Slider = () => {
 
     useEffect(() => {
       async function loadMovies() {
-        const movieData = await fetchMovies();
+        const movieData = await fetchPopularMovies();
         setMovies(movieData);
       }
       loadMovies();
