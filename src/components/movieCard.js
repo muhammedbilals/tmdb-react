@@ -1,10 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const MovieCard = ({ movie }) => {
+  const navigate =useNavigate()
+
+  const handleNavigation =()=>{
+    navigate(`/movie/${movie.id}`)
+  }
   return (
     <div
       key={movie.id}
       className="flex-shrink-0 w-48 bg-green-50 rounded-lg overflow-hidden group relative"
+      onClick={handleNavigation}
     >
       <div className="relative">
         <h2 className="absolute bottom-2 left-2 text-lg text-white font-medium z-20">

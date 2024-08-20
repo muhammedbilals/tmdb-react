@@ -1,5 +1,7 @@
 import tmdbApi from '../api/api';
 import { transformMovieData } from '../models/movieModel';
+import { transformMovieDetailsData } from '../models/movieDetailsModel';
+
 
 
 const getPopularMovies = async () => {
@@ -58,7 +60,8 @@ const getUpcomingMovies = async () => {
 const getMovieById = async (id) => {
   try {
     const response = await tmdbApi.get(`/movie/${id}`);
-    return transformMovieData(response.data);
+    console.log(response.data)
+    return transformMovieDetailsData(response.data);
   } catch (error) {
     console.error('Error fetching movie:', error);
     return null;
@@ -72,6 +75,5 @@ export default {
   getTopRatedMovies,
   getUpcomingMovies,
   getMovieById,
-
 };
    
