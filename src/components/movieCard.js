@@ -18,11 +18,11 @@ const MovieCard = ({ movie }) => {
           {movie.title}
         </h2>
         <img
-          src={`https://image.tmdb.org/t/p/w400${movie.posterPath}`}
+          src={`https://image.tmdb.org/t/p/w500${movie.posterPath}`}
           alt={movie.title}
           className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105 "
         />
-        <div className="absolute top-2 left-2 bg-gray-900 text-white text-sm font-semibold px-2 py-1 rounded-lg z-10 ">
+        <div className="absolute top-2 left-2 bg-gray-900 text-white text-sm font-semibold px-2 py-1 rounded-lg z-10 opacity-70">
           {movie.voteAverage.toFixed(1)} ⭐
         </div>
       </div>
